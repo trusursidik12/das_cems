@@ -5,15 +5,21 @@
         private $dbuser = 'root';
         private $dbpassword = 'root';
         // private $serverURL = 'http://egateway-das.test/simulation.php';
-        private $serverURL = 'http://192.168.1.16/egateway_api/sensor_values_post.php';
+        // private $baseServer = "http://192.168.1.16";
+        private $baseServer = "http://localhost";
+        private $serverURL = "http://192.168.1.16/egateway_api/sensor_values_post.php";
         private $apiKey = 'VHJ1c3VyVW5nZ3VsVGVrbnVzYV9wVA==';
-
+        
         public function __construct(){
             parent::__construct($this->dbhost,$this->dbuser,$this->dbpassword,$this->dbname);
             if (mysqli_connect_error()) {
                 exit('Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
             }
             parent::set_charset('utf-8');
+        }
+
+        public function getServer($path=""){
+            return $this->baseServer.$path;
         }
 
         public function getSensorValues(){

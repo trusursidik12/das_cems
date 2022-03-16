@@ -18,6 +18,9 @@
             <li class="nav-item">
                 <a class="nav-link <?= $page == "sensors" ? 'active' : ''; ?>" href="sensors.php">Sensors</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link <?= $page == "logs" ? 'active' : ''; ?>" href="logs.php">Logs</a>
+            </li>
         </ul>
         </div>
     </div>
